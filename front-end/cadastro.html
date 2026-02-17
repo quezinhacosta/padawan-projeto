@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+
+    <section id="start">
+
+        <h1>Cadastro Padawan</h1>
+        <p>Conectando mentores e calouros </p>
+        <p>Apenas para alunos de ciências da computação da UNICAP</p>
+
+        <div class="cadastro">
+
+        <select id="tipoUsuario">
+            <option value="">Selecione o tipo de usuário</option>
+            <option value="calouro">Calouro</option>
+            <option value="mentor">Mentor</option>
+            <option value="admin">Administrador</option>
+        </select>
+
+        <input type="text" placeholder="Nome completo">
+        <input type="email" placeholder="E-mail">
+        <input type="password" placeholder="Senha">
+        <input type="text" placeholder="Período" class="mentor-only">
+
+        <button>Cadastrar</button>
+
+        <a href="index.html">Já tem conta? Fazer login</a>
+
+        </div>
+
+    </section>
+
+<script>
+    const tipo = document.getElementById("tipoUsuario");
+    const mentorFields = document.querySelectorAll(".mentor-only");
+    const calouroFields = document.querySelectorAll(".calouro-only");
+
+    tipo.addEventListener("change", () => {
+        mentorFields.forEach(f => f.style.display = "none");
+        calouroFields.forEach(f => f.style.display = "none");
+
+        if(tipo.value === "mentor"){
+            mentorFields.forEach(f => f.style.display = "block");
+        }
+
+        if(tipo.value === "calouro"){
+            calouroFields.forEach(f => f.style.display = "block");
+        }
+    });
+</script>
+
+</body>
+</html>

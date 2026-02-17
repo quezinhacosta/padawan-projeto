@@ -1,0 +1,121 @@
+:root {
+    --black: #000000;
+    --blue: #57578f;
+    --white: #ffffff;
+    --gray: #c4c4c4;
+    --quase-black: #363535;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo geral */
+body {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Seção inicial */
+#start {
+    text-align: center;
+    max-width: 400px;
+}
+
+/* Título */
+#start h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+#start p {
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+/* Caixa login (card) */
+.login {
+    background: rgba(54,53,53,0.9);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Inputs */
+.login input {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    outline: none;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+/* Efeito ao clicar no input */
+.login input:focus {
+    border: 1px solid var(--blue);
+    box-shadow: 0 0 8px rgba(87,87,143,0.6);
+}
+
+/* Botão */
+.login button {
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #57578f, #6c6ccf);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(87,87,143,0.5);
+}
+
+/* Links */
+.login a {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--gray);
+    transition: 0.2s;
+}
+
+.login a:hover {
+    color: var(--blue);
+}
+
+/* Link de introdução */
+.intro-link {
+    margin-top: 15px;
+}
+
+.intro-link a {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.intro-link a:hover {
+    text-decoration: underline;
+}
