@@ -7,120 +7,108 @@
     --card: #363535;
 }
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Corpo */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: linear-gradient(135deg, #000, #1a1a1a);
     color: var(--white);
     min-height: 100vh;
+    display: flex;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 25px 15px;
+.sidebar {
+    width: 220px;
+    height: 100vh;
     background: #111;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-}
-
-header h1 {
-    font-size: 28px;
-}
-
-header button {
-    border: none;
-    padding: 12px;
-    color: white;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-    transition: 0.3s;
-}
-
-header p {
-    color: var(--gray);
-    margin-top: 5px;
-}
-
-/* Área principal */
-main {
-    padding: 40px 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* Títulos das seções */
-section h2 {
-    margin-bottom: 20px;
-    color: var(--gray);
-    border-left: 4px solid var(--blue);
-    padding-left: 10px;
-}
-
-/* Grid dos cards */
-section {
-    margin-bottom: 40px;
-    display: grid;
-    gap: 20px;
-}
-
-/* Card */
-section div {
-    background: var(--card);
     padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
 }
 
-section div:hover {
-    transform: translateY(-5px);
+.logo {
+    margin-bottom: 30px;
+    color: var(--blue-light);
 }
 
-/* Título do card */
-section h3 {
-    margin-bottom: 10px;
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Texto */
-section p {
-    color: var(--gray);
-    margin-bottom: 15px;
-}
-
-/* Botão */
-button {
-    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+.menu button {
+    background: none;
     border: none;
+    color: var(--white);
+    text-align: left;
     padding: 12px;
-    color: white;
-    border-radius: 8px;
-    font-weight: bold;
+    border-radius: 6px;
     cursor: pointer;
-    width: 100%;
     transition: 0.3s;
 }
 
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(87,87,143,0.5);
-}
-@media (min-width: 768px) {
-    section {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.menu button:hover {
+    background: var(--blue);
 }
 
-@media (min-width: 1100px) {
-    section {
-        grid-template-columns: repeat(3, 1fr);
+.content {
+    margin-left: 220px;
+    width: 100%;
+    padding: 40px;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.section h1 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: var(--blue);
+}
+
+#dashboard-data,
+#vinculos-list,
+#grupos-list,
+#chat-container {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 180px;
     }
+
+    .content {
+        margin-left: 180px;
+        padding: 25px;
+    }
+
 }

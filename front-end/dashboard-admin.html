@@ -1,64 +1,149 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padawan</title>
-    <link rel="stylesheet" href="dashboard-admin.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padawan ON </title>
+<link rel="stylesheet" href="dashboard-admin.css">
+
 </head>
 
 <body>
 
-    <header>
-        <h1>Painel do Administrador</h1>
-        <p>Projeto Padawan</p>
-        <a href="index.html">
-            <button>Sair</button> </a>
-    </header>
 
-    <main>
+    <aside class="sidebar">
+    <h2 class="logo">Padawan ON</h2>
 
-        <section>
-            <h2>Gerenciamento</h2>
+    <nav class="menu">
 
-            <div>
-                <h3>Mentores</h3>
-                <p>Adicionar, editar ou remover mentores</p>
-                <button>Gerenciar Mentores</button>
-            </div>
+    <button onclick="showSection('dashboard')">Dashboard</button>
 
-            <div>
-                <h3>Calouros</h3>
-                <p>Adicionar, editar ou remover calouros</p>
-                <button>Gerenciar Calouros</button>
-            </div>
+    <button onclick="showSection('usuarios')">Usuários</button>
 
-            <div>
-                <h3>Administradores</h3>
-                <p>Controlar permissões de administradores</p>
-                <button>Gerenciar Administradores</button>
-            </div>
+    <button onclick="showSection('vinculos')">Vínculos</button>
 
-        </section>
+    <button onclick="showSection('encontros')">Encontros</button>
 
-        <section>
-            <h2>Monitoramento</h2>
+    <button onclick="showSection('grupos')">Grupos</button>
 
-            <div>
-                <h3>Encontros</h3>
-                <p>Visualizar encontros realizados</p>
-                <button>Ver Encontros</button>
-            </div>
+    <button onclick="showSection('chat')">Chat</button>
 
-            <div>
-                <h3>Relatórios</h3>
-                <p>Acompanhar métricas do programa</p>
-                <button>Ver Relatórios</button>
-            </div>
+    <button onclick="logout()">Sair</button>
 
-        </section>
+    </nav>
+
+    </aside>
+
+
+    <main class="content">
+
+
+    <section id="dashboard" class="section active">
+
+    <h1>Dashboard</h1>
+
+    <div id="dashboard-data"></div>
+
+    </section>
+
+
+    <section id="usuarios" class="section">
+
+    <h1>Usuários</h1>
+
+    <table id="usuarios-table">
+
+    <thead>
+
+    <tr>
+
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Tipo</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+
+    </tbody>
+
+    </table>
+
+    </section>
+
+    <section id="vinculos" class="section">
+
+    <h1>Vínculos</h1>
+
+    <div id="vinculos-list">
+
+
+    </div>
+
+    </section>
+
+
+    <section id="encontros" class="section">
+
+    <h1>Encontros</h1>
+
+    <table id="encontros-table">
+
+    <thead>
+
+    <tr>
+
+    <th>Mentor</th>
+    <th>Calouro</th>
+    <th>Data</th>
+    <th>Duração</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+
+    </tbody>
+
+    </table>
+
+    </section>
+
+
+
+    <section id="grupos" class="section">
+
+    <h1>Grupos</h1>
+
+    <div id="grupos-list">
+
+    </div>
+
+    </section>
+
+
+    <section id="chat" class="section">
+
+    <h1>Chat</h1>
+
+    <div id="chat-container">
+
+
+    </div>
+
+    </section>
 
     </main>
 
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
